@@ -1,7 +1,7 @@
 <h1 align="center">Olá! 👋 Eu sou Silas Reuel da Silva</h1>
 
 <p align="center">
-  <img src="img/img_perfil.jpeg" alt="Profile views" />
+  <img src="img/PerfilGitHub.gif" alt="Profile Gif" />
 </p>
 
 ---
@@ -15,7 +15,7 @@
 ### 🚀 Tecnologias e Ferramentas  
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=php,postgresql,ruby,rails,js,java,python,c,cplusplus,git,postman,insomnia" alt="Tecnologias e Ferramentas" />
+  <img src="https://skillicons.dev/icons?i=php,postgresql,ruby,rails,js,java,python,c,c++,git,postman,insomnia" alt="Tecnologias e Ferramentas" />
 </div>
 
 ---
