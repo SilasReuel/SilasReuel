@@ -1,7 +1,7 @@
 <h1 align="center">Olá! 👋 Eu sou Silas Reuel da Silva</h1>
 
 <p align="center">
-  <img src="img_perfil.jpeg" alt="Profile views" />
+  <img src="img/img_perfil.jpeg" alt="Profile views" />
 </p>
 
 ---
