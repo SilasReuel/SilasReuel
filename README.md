@@ -1,7 +1,7 @@
 <h1 align="center">Olá! 👋 Eu sou Silas Reuel da Silva</h1>
 
 <p align="center">
-  <img src="img/PerfilGitHub.gif" alt="Profile Gif" />
+  <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="200" />
 </p>
 
 ---
