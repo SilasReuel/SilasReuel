@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="1584px" height="396"/>
+  <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="1584px" height="296"/>
 </p>
 
 <h1 align="center">Olá! 👋 Eu sou Silas Reuel da Silva</h1>
@@ -58,8 +58,8 @@
 
 ### 🌎 Onde me encontrar  
 
-<a href="mailto:silas.reuel@unesp.br">
-  <img src="https://img.shields.io/badge/Email-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Enviar e-mail">
+<a href="https://mail.google.com/" target="_blank">
+  <img src="https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Abrir Gmail">
 </a>
 
 ---
