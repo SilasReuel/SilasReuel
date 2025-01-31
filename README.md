@@ -63,3 +63,12 @@
 </a>
 
 ---
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=dark" height="400" width="400" margin="0"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SilasReuel&layout=compact&theme=dark" width="400" height="400" margin="0"/>
+
+  ##
+  
+  <img src="https://github-profile-trophy.vercel.app?username=SilasReuel&theme=darkhub&column=5&margin-w=84&margin-h=7&row=1&no-frame=true&no-bg=true"   height="150" alt="trophy graph"  />
+<div/>
