@@ -7,6 +7,7 @@
 <p>
   <img src="https://komarev.com/ghpvc/?username=SilasReuel&label=Visualizações%20de%20perfil&color=red">
 <p/>
+  
 ---
 
 ### 💡 Sobre mim 💡
