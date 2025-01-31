@@ -8,7 +8,6 @@
   <img src="https://komarev.com/ghpvc/?username=SilasReuel&label=Visualizações%20de%20perfil&color=red">
 <p/>
   
----
 
 ### 💡 Sobre mim 💡
 - 🔭 Atualmente, estou trabalhando no **desenvolvimento do site FabLab UNESP-Bauru, uma plataforma para aluguel de máquinas 3D e CNC, inscrição em eventos e mentorias, além da publicação de notícias sobre inovação e tecnologia no laboratório FabLab da UNESP-Bauru. 🚀**
