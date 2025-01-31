@@ -2,7 +2,7 @@
   <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="1584px" height="296"/>
 </p>
 
-<h1 align="center">Olá! 👋 Eu sou Silas Reuel da Silva</h1>
+<h1 align="center">Olá! 👋 Seja bem vindo(a)</h1>
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=SilasReuel&label=Visualizações%20de%20perfil&color=red">
