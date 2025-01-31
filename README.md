@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="1584px" height="256"/>
+  <img src="img/PerfilGitHub.gif" alt="Profile Gif" width="1584px" height="226"/>
 </p>
 
 <h1 align="center">Olá! 👋 Seja bem vindo(a)</h1>
