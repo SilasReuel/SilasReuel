@@ -1,0 +1,66 @@
+name: Update README with Top Langs Stats
+
+on:
+  push:
+    branches:
+      - development  # Define que o workflow rodará na branch development
+  pull_request:
+    branches:
+      - development  # Rodará também em PRs para a branch development
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        
+      - name: Fetch all repos and get languages
+        run: |
+          # Defina o seu nome de usuário
+          USERNAME="SilasReuel"
+          
+          # Crie uma variável para o token
+          TOKEN="${{ secrets.GH_TOKEN }}"
+
+          # Faça a requisição à API do GitHub para pegar todos os repositórios
+          repos=$(curl -s -H "Authorization: token $TOKEN" \
+               "https://api.github.com/users/$USERNAME/repos?per_page=100" | \
+               jq -r '.[].name')
+
+          # Variável para armazenar as linguagens
+          LANGUAGES=""
+
+          # Loop pelos repositórios para pegar as linguagens
+          for repo in $repos; do
+            lang=$(curl -s -H "Authorization: token $TOKEN" \
+              "https://api.github.com/repos/$USERNAME/$repo/languages" | \
+              jq -r 'to_entries | map(.key) | .[]')
+
+            # Adiciona as linguagens à variável
+            LANGUAGES="$LANGUAGES,$lang"
+          done
+
+          # Remova a primeira vírgula
+          LANGUAGES=$(echo $LANGUAGES | sed 's/^,//')
+
+          # Crie a URL com as linguagens coletadas
+          URL="https://github-readme-stats.vercel.app/api/top-langs/?username=$USERNAME&langs_count=10&layout=compact&hide=$LANGUAGES"
+
+          # Baixe a imagem das linguagens
+          curl -o readme_image.png $URL
+          
+      - name: Update README
+        run: |
+          # Adicionar ou atualizar a imagem no README (não substituir todo o conteúdo)
+          echo -e "\n![Top Langs](./readme_image.png)" >> README.md
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "silas.reuel@unesp.br"
+          git config --global user.name "SilasReuel"
+          git add README.md
+          git commit -m "Atualizando estatísticas de linguagens"
+          git push origin main
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
