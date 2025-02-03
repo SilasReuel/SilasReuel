@@ -62,11 +62,11 @@ jobs:
 
       - name: Update README
         run: |
-          # Caminho correto da imagem no GitHub
-          IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/main/readme_image.png"
+          # URL correta da imagem
+          IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/SilasReuel/main/readme_image.png"
 
-          # Atualizar o README.md dentro dos marcadores
-          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n![]('"$IMAGE_URL"')\n<!-- TOP_LANGS_END -->' README.md
+          # Substituir corretamente no README.md dentro dos marcadores
+          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n![Top Langs]('"$IMAGE_URL"')\n<!-- TOP_LANGS_END -->' README.md
 
       - name: Commit and Push Changes
         run: |
