@@ -60,8 +60,8 @@ jobs:
           
       - name: Commit and Push Changes
         run: |
-          git config --global user.email "silas.reuel@unesp.br"
-          git config --global user.name "SilasReuel"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git add README.md
           git commit -m "Atualizando estatísticas de linguagens"
           git push origin main
