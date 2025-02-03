@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - development
-  workflow_dispatch:  # Permite execução manual
+  workflow_dispatch:  # Adiciona a opção de rodar manualmente
 
 jobs:
   update-readme:
@@ -15,16 +15,16 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-
+        
       - name: Fetch all repos and get languages
         run: |
           # Defina o seu nome de usuário
           USERNAME="SilasReuel"
           
           # Crie uma variável para o token
-          TOKEN="${{ secrets.GH_PERSONAL_TOKEN }}"  # Usando o PAT para evitar problemas de permissão
+          TOKEN="${{ secrets.GH_TOKEN }}"
 
-          # Obter todos os repositórios do usuário via API do GitHub
+          # Faça a requisição à API do GitHub para pegar todos os repositórios
           repos=$(curl -s -H "Authorization: token $TOKEN" \
                "https://api.github.com/users/$USERNAME/repos?per_page=100" | \
                jq -r '.[].name')
@@ -32,9 +32,9 @@ jobs:
           # Variável para armazenar as linguagens
           LANGUAGES=""
 
-          # Loop pelos repositórios para coletar as linguagens
+          # Loop pelos repositórios para pegar as linguagens
           for repo in $repos; do
-            echo "Verificando repositório: $repo"
+            echo "Verificando repositório: $repo"  # Adiciona log para depurar o nome do repositório
 
             lang=$(curl -s -H "Authorization: token $TOKEN" \
               "https://api.github.com/repos/$USERNAME/$repo/languages" | \
@@ -44,29 +44,26 @@ jobs:
             LANGUAGES="$LANGUAGES,$lang"
           done
 
-          # Remover a primeira vírgula
+          # Remova a primeira vírgula
           LANGUAGES=$(echo $LANGUAGES | sed 's/^,//')
 
-          # Criar a URL com as linguagens coletadas
+          # Crie a URL com as linguagens coletadas
           URL="https://github-readme-stats.vercel.app/api/top-langs/?username=$USERNAME&langs_count=10&layout=compact&hide=$LANGUAGES"
 
-          # Baixar a imagem das linguagens
+          # Baixe a imagem das linguagens
           curl -o readme_image.png $URL
           
       - name: Update README
         run: |
-          # Caminho da imagem
-          IMAGE_TAG="![Top Langs](./readme_image.png)"
-
-          # Substituir o conteúdo entre os marcadores no README.md
-          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n'"$IMAGE_TAG"'\n<!-- TOP_LANGS_END -->' README.md
-
+          # Adicionar ou atualizar a imagem no README (não substituir todo o conteúdo)
+          echo -e "\n![Top Langs](./readme_image.png)" >> README.md
+          
       - name: Commit and Push Changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add README.md readme_image.png
+          git add README.md
           git commit -m "Atualizando estatísticas de linguagens"
           git push origin main
         env:
-          GH_TOKEN: ${{ secrets.GH_PERSONAL_TOKEN }}  # Alterado para o PAT
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
