@@ -36,6 +36,7 @@ jobs:
 
           # Coletar linguagens usadas
           LANGUAGES=""
+
           for repo in $repos; do
             echo "Verificando repositório: $repo"
             lang=$(curl -s -H "Authorization: token $TOKEN" \
@@ -62,7 +63,7 @@ jobs:
 
       - name: Update README
         run: |
-          # URL correta da imagem
+          # URL correta da imagem, apontando para o caminho no repositório
           IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/SilasReuel/main/readme_image.png"
 
           # Substituir corretamente no README.md dentro dos marcadores
@@ -74,6 +75,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git add README.md readme_image.png
           git commit -m "Atualizando estatísticas de linguagens" || echo "Nenhuma alteração para commitar"
-          git push origin main  # Mudado para `main`
+          git push origin main
         env:
           GH_TOKEN: ${{ secrets.GH_PERSONAL_TOKEN }}
