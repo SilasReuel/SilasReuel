@@ -66,11 +66,11 @@
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=great-gatsby&custom_title=SILAS%20REUEL%20DA%20SILVA" height="400" width="400" margin="0"/>
+  <!-- TOP_LANGS_START -->
   ![Top Langs](./readme_image.png)
+  <!-- TOP_LANGS_END -->
 
   ##
   
   <img src="https://github-profile-trophy.vercel.app?username=SilasReuel&theme=darkhub&column=5&margin-w=84&margin-h=7&row=1&no-frame=true&no-bg=true"   height="150" alt="trophy graph"  />
 <div/>
-
-![Top Langs](./readme_image.png)
