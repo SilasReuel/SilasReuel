@@ -3,11 +3,11 @@ name: Update README with Top Langs Stats
 on:
   push:
     branches:
-      - development
+      - main  # Mudado para a branch correta
   pull_request:
     branches:
-      - development
-  workflow_dispatch:  # Adiciona a opção de rodar manualmente
+      - main
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -15,59 +15,65 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-        
+
       - name: Fetch all repos and get languages
         run: |
-          # Defina o seu nome de usuário
           USERNAME="SilasReuel"
-          
-          # Crie uma variável para o token
-          TOKEN="${{ secrets.GH_TOKEN }}"
+          TOKEN="${{ secrets.GH_PERSONAL_TOKEN }}"
 
-          # Faça a requisição à API do GitHub para pegar todos os repositórios
-          repos=$(curl -s -H "Authorization: token $TOKEN" \
-               "https://api.github.com/users/$USERNAME/repos?per_page=100" | \
-               jq -r '.[].name')
+          # Obter lista de repositórios
+          response=$(curl -s -H "Authorization: token $TOKEN" \
+               "https://api.github.com/users/$USERNAME/repos?per_page=100")
 
-          # Variável para armazenar as linguagens
+          # Verifica se há erro na resposta da API
+          if echo "$response" | jq -e 'has("message")' > /dev/null; then
+            echo "Erro da API do GitHub: $(echo "$response" | jq -r '.message')"
+            exit 1
+          fi
+
+          # Extrair nomes dos repositórios
+          repos=$(echo "$response" | jq -r '.[] | .name')
+
+          # Coletar linguagens usadas
           LANGUAGES=""
-
-          # Loop pelos repositórios para pegar as linguagens
           for repo in $repos; do
-            echo "Verificando repositório: $repo"  # Adiciona log para depurar o nome do repositório
-
+            echo "Verificando repositório: $repo"
             lang=$(curl -s -H "Authorization: token $TOKEN" \
               "https://api.github.com/repos/$USERNAME/$repo/languages" | \
-              jq -r 'to_entries | map(.key) | .[]')
-
-            # Adiciona as linguagens à variável
+              jq -r 'to_entries | map(.key) | .[]' || echo "")
             LANGUAGES="$LANGUAGES,$lang"
           done
 
-          # Remova a primeira vírgula
+          # Limpar lista de linguagens
           LANGUAGES=$(echo $LANGUAGES | sed 's/^,//')
 
-          # Crie a URL com as linguagens coletadas
+          # Criar URL da imagem
           URL="https://github-readme-stats.vercel.app/api/top-langs/?username=$USERNAME&langs_count=10&layout=compact&hide=$LANGUAGES"
 
-          # Baixe a imagem das linguagens
+          # Baixar a imagem
           curl -o readme_image.png $URL
-          
+
+      - name: Check if image was downloaded
+        run: |
+          if [ ! -s readme_image.png ]; then
+            echo "Erro: A imagem não foi baixada corretamente!"
+            exit 1
+          fi
+
       - name: Update README
         run: |
-          # Adicionar ou atualizar a imagem no README (não substituir todo o conteúdo)
-          # Caminho da imagem
-          IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/development/main/readme_image.png"
+          # Caminho correto da imagem no GitHub
+          IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/main/readme_image.png"
 
-          # Substituir o conteúdo entre os marcadores no README.md
+          # Atualizar o README.md dentro dos marcadores
           sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n![]('"$IMAGE_URL"')\n<!-- TOP_LANGS_END -->' README.md
-          
+
       - name: Commit and Push Changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add README.md
-          git commit -m "Atualizando estatísticas de linguagens"
-          git push origin main
+          git add README.md readme_image.png
+          git commit -m "Atualizando estatísticas de linguagens" || echo "Nenhuma alteração para commitar"
+          git push origin main  # Mudado para `main`
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PERSONAL_TOKEN }}
