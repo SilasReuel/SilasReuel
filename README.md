@@ -74,5 +74,3 @@
   
   <img src="https://github-profile-trophy.vercel.app?username=SilasReuel&theme=darkhub&column=5&margin-w=84&margin-h=7&row=1&no-frame=true&no-bg=true"   height="150" alt="trophy graph"  />
 <div/>
-
-![Top Langs](./readme_image.png)
