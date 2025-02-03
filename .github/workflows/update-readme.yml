@@ -3,10 +3,11 @@ name: Update README with Top Langs Stats
 on:
   push:
     branches:
-      - development  # Define que o workflow rodará na branch development
+      - development
   pull_request:
     branches:
-      - development  # Rodará também em PRs para a branch development
+      - development
+  workflow_dispatch:  # Adiciona a opção de rodar manualmente
 
 jobs:
   update-readme:
