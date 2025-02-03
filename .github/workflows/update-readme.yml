@@ -34,6 +34,8 @@ jobs:
 
           # Loop pelos repositórios para pegar as linguagens
           for repo in $repos; do
+            echo "Verificando repositório: $repo"  # Adiciona log para depurar o nome do repositório
+
             lang=$(curl -s -H "Authorization: token $TOKEN" \
               "https://api.github.com/repos/$USERNAME/$repo/languages" | \
               jq -r 'to_entries | map(.key) | .[]')
