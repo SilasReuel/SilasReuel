@@ -48,7 +48,7 @@ jobs:
           LANGUAGES=$(echo $LANGUAGES | sed 's/^,//')
 
           # Criar URL da imagem
-          URL="https://github-readme-stats.vercel.app/api/top-langs/?username=$USERNAME&langs_count=10&layout=compact&hide=$LANGUAGES"
+          URL="https://github-readme-stats.vercel.app/api/top-langs/?username=$USERNAME&langs_count=10&layout=compact"
 
           # Baixar a imagem
           curl -o readme_image.png $URL
