@@ -67,7 +67,7 @@
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=great-gatsby&custom_title=SILAS%20REUEL%20DA%20SILVA" height="400" width="400" margin="0"/>
 <!-- TOP_LANGS_START -->
-![](https://raw.githubusercontent.com/SilasReuel/main/readme_image.png)
+![Top Langs](https://raw.githubusercontent.com/SilasReuel/SilasReuel/main/readme_image.png)
 <!-- TOP_LANGS_END -->
 
   ##
