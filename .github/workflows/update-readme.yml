@@ -19,7 +19,7 @@ jobs:
       - name: Fetch all repos and get languages
         run: |
           USERNAME="SilasReuel"
-          TOKEN="${{ secrets.GH_PERSONAL_TOKEN }}"
+          TOKEN="${{ secrets.GH_TOKEN }}"
 
           # Obter lista de repositórios
           response=$(curl -s -H "Authorization: token $TOKEN" \
