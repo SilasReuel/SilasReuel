@@ -65,8 +65,8 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=dark" height="400" width="400" margin="0"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SilasReuel&layout=compact&theme=dark" width="400" height="400" margin="0"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=great-gatsby&custom_title=SILAS%20REUEL%20DA%20SILVA" height="400" width="400" margin="0"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SilasReuel&layout=compact&theme=gruvbox&custom_title=Linguagens%20mais%20utilizadas" width="400" height="400" margin="0"/>
 
   ##
   
