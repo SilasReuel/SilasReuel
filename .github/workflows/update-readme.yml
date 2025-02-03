@@ -57,10 +57,10 @@ jobs:
         run: |
           # Adicionar ou atualizar a imagem no README (não substituir todo o conteúdo)
           # Caminho da imagem
-          IMAGE_TAG="![Top Langs](./readme_image.png)"
+          IMAGE_URL="https://raw.githubusercontent.com/SilasReuel/development/main/readme_image.png"
 
           # Substituir o conteúdo entre os marcadores no README.md
-          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n'"$IMAGE_TAG"'\n<!-- TOP_LANGS_END -->' README.md
+          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n![]('"$IMAGE_URL"')\n<!-- TOP_LANGS_END -->' README.md
           
       - name: Commit and Push Changes
         run: |
