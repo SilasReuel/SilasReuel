@@ -56,7 +56,11 @@ jobs:
       - name: Update README
         run: |
           # Adicionar ou atualizar a imagem no README (não substituir todo o conteúdo)
-          echo -e "\n![Top Langs](./readme_image.png)" >> README.md
+          # Caminho da imagem
+          IMAGE_TAG="![Top Langs](./readme_image.png)"
+
+          # Substituir o conteúdo entre os marcadores no README.md
+          sed -i '/<!-- TOP_LANGS_START -->/,/<!-- TOP_LANGS_END -->/c\<!-- TOP_LANGS_START -->\n'"$IMAGE_TAG"'\n<!-- TOP_LANGS_END -->' README.md
           
       - name: Commit and Push Changes
         run: |
