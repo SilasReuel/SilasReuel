@@ -10,7 +10,7 @@
   
 
 ### 💡 Sobre mim 💡
-- 🔭 Atualmente, estou trabalhando no **desenvolvimento de um site de jestão de projetos, que compartilha de ações do GitHub e visualização de gráficos com Grafana. 🚀**
+- 🔭 Atualmente, estou trabalhando no **desenvolvimento de um site de Gestão de Projetos, com análise de ações do GitHub e geração de gráficos com Grafana. 🚀**
 - 🌱 Aprendendo **Ruby e Ruby on Rails**
 
 ---
