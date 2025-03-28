@@ -36,6 +36,8 @@
   <img width="14" />
   <img src="https://skillicons.dev/icons?i=cpp" alt="C++" width="50" />
   <img width="14" />
+  <img src="https://skillicons.dev/icons?i=arduino" alt="Arduino" width="50" />
+  <img width="14" />
   <img src="https://skillicons.dev/icons?i=git" alt="Git" width="50" />
   <img width="14" />
   <img src="https://skillicons.dev/icons?i=html" alt="HTML" width="50" />
@@ -45,6 +47,12 @@
   <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="50" />
   <img width="14" />
   <img src="https://skillicons.dev/icons?i=kali" alt="Kali Linux" width="50" />
+  <img width="14" />
+  <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" width="50" />
+  <img width="14" />
+  <img src="https://skillicons.dev/icons?i=powershell" alt="Powershell" width="50" />
+  <img width="14" />
+  <img src="https://skillicons.dev/icons?i=npm" alt="npm" width="50" />
   <img width="14" />
   <img src="https://skillicons.dev/icons?i=gradle" alt="Gradle" width="50" />
   <img width="14" />
