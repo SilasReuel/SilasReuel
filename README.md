@@ -76,11 +76,11 @@
 
 ---
 
-<div align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=SilasReuel&count_private=true&show_icons=true&hide=prs&theme=great-gatsby&custom_title=SILAS%20REUEL%20DA%20SILVA" height="200" width="400" margin="0"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SilasReuel&layout=compact&theme=maroongold&custom_title=Linguagens%20mais%20utilizadas" height="200" width="400"/>
-
-  ##
-  
-  <img src="https://github-profile-trophy.vercel.app?username=SilasReuel&theme=darkhub&column=5&margin-w=84&margin-h=7&row=1&no-frame=true&no-bg=true"   height="150" alt="trophy graph"  />
-<div/>
+<div align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=SilasReuel&theme=ocean_dark&utcOffset=3"><br>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=SilasReuel&theme=great_gatsby">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=SilasReuel&theme=2077">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=SilasReuel&theme=aura_dark">
+  <img src=https://streak-stats.demolab.com?user=SilasReuel&locale=pt-br&hide_title=false&mode=weekly&theme=git_dark&hide_border=false&border_radius=5&custom_title=SILAS%20REUEL%20DA%20SILVA>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=SilasReuel&theme=gotham">
+</div>
